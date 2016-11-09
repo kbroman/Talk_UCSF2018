@@ -3,6 +3,8 @@
 These are slides for a talk that I gave at the University of Tennessee
 Health Sciences Center in Memphis, Tennessee, on 9 Nov 2016.
 
+PDF of slides at <http://bit.ly/Memphis2016>.
+
 ---
 
 To the extent possible under law,

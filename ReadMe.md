@@ -1,7 +1,7 @@
 ### Talk on &ldquo;R/qtl2: progress & plans&rdquo;
 
 These are slides for a talk that I gave at the University of Tennessee
-Health Sciences Center in Memphis, Tennessee, on 9 Nov 2016.
+Health Science Center in Memphis, Tennessee, on 9 Nov 2016.
 
 PDF of slides at <http://bit.ly/Memphis2016>.
 

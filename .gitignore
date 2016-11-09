@@ -1,1 +1,9 @@
 outline.txt
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+rqtl2.pdf

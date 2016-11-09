@@ -1,0 +1,217 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% title info
+\title{R/qtl2: progress \& plans}
+\author{\href{http://kbroman.org}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{http://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
+\\[-4pt]
+\href{https://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
+\\[2pt]
+\scriptsize {\lolit Slides:} \href{http://bit.ly/Memphis2016}{\tt \scriptsize
+  \color{foreground} bit.ly/Memphis2016}
+}
+
+
+\begin{document}
+
+% title slide
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+  \vfill \hfill \includegraphics[height=6mm]{Figs/cc-zero.png} \vspace*{-1cm}
+
+  \note{These are slides for a talk that I gave at the University of
+    Tennessee Health Sciences Center in Memphis, Tennessee, on 9 Nov 2016.
+
+    Source: {\tt https://github.com/kbroman/Talk\_Rqtl2} \\
+    Slides: {\tt http://bit.ly/Memphis2016}
+}
+} }
+
+
+\begin{frame}[c]{R/qtl}
+
+\figw{Figs/rqtl_lines_code.pdf}{1.0}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Intercross}
+\figh{Figs/intercross.pdf}{1.0}
+\end{frame}
+
+
+\begin{frame}[c]{QTL mapping}
+
+\vspace{5mm}
+\figh{Figs/lodcurve_insulin_with_effects.pdf}{0.9}
+\end{frame}
+
+
+\begin{frame}[c]{The ``future''}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{}
+
+\centerline{\Large Good things}
+
+\onslide<2>{
+\begin{itemize}
+\lolit
+  \item HMM
+  \item basic user interface
+  \item comprehensive
+  \item diagnostics and data visualization
+  \item quite comprehensive
+\end{itemize}
+}
+
+\end{frame}
+
+
+\begin{frame}{}
+
+\vspace*{18.5mm}
+
+\centerline{\Large Bad things}
+
+\end{frame}
+
+\begin{frame}[c,fragile]{Stupidest code ever}
+
+\begin{center}
+\begin{minipage}[c]{9.3cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\normalsize}
+\begin{lstlisting}[linewidth=9.3cm]
+n <- ncol(data)
+temp <- rep(FALSE,n)
+for(i in 1:n) {
+  temp[i] <- all(data[2,1:i]=="")
+  if(!temp[i]) break
+}
+if(!any(temp)) stop("...")
+n.phe <- max((1:n)[temp])
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c]{Input file}
+
+\figh{Figs/datafile.pdf}{0.6}
+
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+  \large
+
+  {\hilit Open source} {\lolit means}
+
+  everyone can see my stupid mistakes
+
+  \bigskip \bigskip \bigskip
+
+  \onslide<2>{
+    {\hilit Version control} {\lolit means}
+
+  everyone can see every stupid mistake I've ever made
+}
+
+\end{frame}
+
+
+\begin{frame}[c]{More typically bad code}
+
+  \large
+      The {\hilit \tt scantwo()} function is {\hilit 1446 lines} long.
+
+      \bigskip \bigskip
+
+      The related C code is 20\% of the C code in R/qtl.
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Baroque data structures}
+
+  \large
+      {\tt attr(mycross\$geno[["X"]]\$probs, "map")}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{R/qtl2: Let's not make the same mistakes}
+
+  \bbi
+\item C++ and Rcpp
+\item Roxygen2
+\item testthat
+\item A single ``switch'' for cross type
+\onslide<2>{
+\item Split into multiple packages
+\item Yet another data input format
+\item Flatter data structures, but still complex
+}
+\ei
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{}
+
+\Large
+
+Slides: \href{http://bit.ly/Memphis2016}{\tt bit.ly/Memphis2016} \quad
+\includegraphics[height=5mm]{Figs/cc-zero.png}
+
+\vspace{10mm}
+
+\href{http://kbroman.org}{\tt kbroman.org}
+
+\vspace{10mm}
+
+\href{https://github.com/kbroman}{\tt github.com/kbroman}
+
+\vspace{10mm}
+
+\href{https://twitter.com/kwbroman}{\tt @kwbroman}
+
+
+\end{frame}
+
+
+
+
+\end{document}

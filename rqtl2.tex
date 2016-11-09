@@ -239,19 +239,6 @@ n.phe <- max((1:n)[temp])
 \end{frame}
 
 
-\begin{frame}[c]{More typically bad code}
-
-  \large
-      The {\hilit \tt scantwo()} function is {\hilit 1446 lines} long.
-
-      \bigskip \bigskip
-
-      The related C code is 20\% of the C code in R/qtl.
-
-\end{frame}
-
-
-
 \begin{frame}[c]{Baroque data structures}
 
   \large
@@ -264,10 +251,20 @@ n.phe <- max((1:n)[temp])
 \begin{frame}[c]{R/qtl2: Let's not make the same mistakes}
 
   \bbi
+\only<1>{
 \item C++ and Rcpp
 \item Roxygen2
 \item testthat
 \item A single ``switch'' for cross type
+}
+\only<2>{
+{\lolit
+\item C++ and Rcpp
+\item Roxygen2
+\item testthat
+\item A single ``switch'' for cross type
+}
+}
 \onslide<2>{
 \item Split into multiple packages
 \item Yet another data input format

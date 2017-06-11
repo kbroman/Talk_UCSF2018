@@ -8,7 +8,7 @@ $(STEM).pdf: $(STEM).tex header.tex $(FIGS)
 	xelatex $<
 
 web: $(STEM).pdf
-	scp $(STEM).pdf broman-10.biostat.wisc.edu:Website/presentations/$(STEM).pdf
+	scp $(STEM).pdf broman-10.biostat.wisc.edu:Website/presentations/$(STEM)_ctc2017.pdf
 
 Figs/causal_network.pdf: R/causal_network.R
 	cd $(<D);R $(R_OPTS) -e "source('$(<F)')"

@@ -2,7 +2,11 @@ R_OPTS=--no-save --no-restore --no-init-file --no-site-file # --vanilla, but wit
 
 STEM = rqtl2
 
-FIGS = Figs/causal_network.pdf Figs/pleiotropy_network.pdf Figs/scale_fig1.pdf Figs/batches_fig1.pdf
+FIGS = Figs/causal_network.pdf \
+	   Figs/pleiotropy_network.pdf \
+	   Figs/scale_fig1.pdf \
+	   Figs/batches_fig1.pdf \
+	   Figs/rqtl_lines_code.pdf
 
 $(STEM).pdf: $(STEM).tex header.tex $(FIGS)
 	xelatex $<

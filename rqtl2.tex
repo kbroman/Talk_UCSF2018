@@ -45,7 +45,7 @@
 } }
 
 
-\begin{frame}[c]{R/qtl}
+\begin{frame}[c]{17 years of R/qtl}
 
 \figw{Figs/rqtl_lines_code.pdf}{1.0}
 
@@ -53,16 +53,93 @@
 
 
 
-\begin{frame}[c]{Intercross}
-\figh{Figs/intercross.pdf}{1.0}
+\begin{frame}[c]{}
+
+\centerline{\Large Good things}
+
+\vspace{4mm}
+
+\onslide<2>{
+\begin{itemize}
+\lolit
+  \item HMM code
+  \item basic user interface
+  \item comprehensive
+  \item diagnostics and data visualization
+  \item quite flexible
+\end{itemize}
+}
+
 \end{frame}
 
 
-\begin{frame}[c]{QTL mapping}
+\begin{frame}{}
 
-\vspace{5mm}
-\figh{Figs/lodcurve_insulin_with_effects.pdf}{0.9}
+\vspace*{16.7mm}
+
+\centerline{\Large Bad things}
+
 \end{frame}
+
+\begin{frame}[c,fragile]{Stupidest code ever}
+
+\begin{center}
+\begin{minipage}[c]{9.3cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\normalsize}
+\begin{lstlisting}[linewidth=9.3cm]
+n <- ncol(data)
+temp <- rep(FALSE,n)
+for(i in 1:n) {
+  temp[i] <- all(data[2,1:i]=="")
+  if(!temp[i]) break
+}
+if(!any(temp)) stop("...")
+n.phe <- max((1:n)[temp])
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c]{Input file}
+
+\figh{Figs/datafile.pdf}{0.6}
+
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+  \large
+
+  {\hilit Open source} {\lolit means}
+
+  everyone can see my stupid mistakes
+
+  \bigskip \bigskip \bigskip
+
+  \onslide<2>{
+    {\hilit Version control} {\lolit means}
+
+  everyone can see every stupid mistake I've ever made
+}
+
+\end{frame}
+
+
+\begin{frame}[c]{Baroque data structures}
+
+  \large
+      {\tt attr(mycross\$geno[["X"]]\$probs, "map")}
+
+\end{frame}
+
+
+
+
 
 
 \begin{frame}[c]{The ``future''}
@@ -161,96 +238,6 @@
 \vspace{7mm}
 
 \hfill {\scriptsize \color{lolit} Shaffer et al. (2013) J Dent Res 92:32-37}
-
-\end{frame}
-
-
-\begin{frame}[c]{R/qtl}
-\figw{Figs/rqtl_lines_code.pdf}{1.0}
-\end{frame}
-
-
-\begin{frame}[c]{}
-
-\centerline{\Large Good things}
-
-\vspace{4mm}
-
-\onslide<2>{
-\begin{itemize}
-\lolit
-  \item HMM code
-  \item basic user interface
-  \item comprehensive
-  \item diagnostics and data visualization
-  \item quite flexible
-\end{itemize}
-}
-
-\end{frame}
-
-
-\begin{frame}{}
-
-\vspace*{16.7mm}
-
-\centerline{\Large Bad things}
-
-\end{frame}
-
-\begin{frame}[c,fragile]{Stupidest code ever}
-
-\begin{center}
-\begin{minipage}[c]{9.3cm}
-\begin{semiverbatim}
-\lstset{basicstyle=\normalsize}
-\begin{lstlisting}[linewidth=9.3cm]
-n <- ncol(data)
-temp <- rep(FALSE,n)
-for(i in 1:n) {
-  temp[i] <- all(data[2,1:i]=="")
-  if(!temp[i]) break
-}
-if(!any(temp)) stop("...")
-n.phe <- max((1:n)[temp])
-\end{lstlisting}
-\end{semiverbatim}
-\end{minipage}
-\end{center}
-
-\end{frame}
-
-
-\begin{frame}[c]{Input file}
-
-\figh{Figs/datafile.pdf}{0.6}
-
-\end{frame}
-
-
-\begin{frame}[c]{}
-
-  \large
-
-  {\hilit Open source} {\lolit means}
-
-  everyone can see my stupid mistakes
-
-  \bigskip \bigskip \bigskip
-
-  \onslide<2>{
-    {\hilit Version control} {\lolit means}
-
-  everyone can see every stupid mistake I've ever made
-}
-
-\end{frame}
-
-
-\begin{frame}[c]{Baroque data structures}
-
-  \large
-      {\tt attr(mycross\$geno[["X"]]\$probs, "map")}
 
 \end{frame}
 

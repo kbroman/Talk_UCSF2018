@@ -64,14 +64,15 @@ yli <- c(0, 9)
 plot(out, pmap, ylim=yli, mgp=c(1.6, 0.3, 0))
 dev.off()
 
+lodcolors <- c("slateblue", "violetred", broman::brocolors("web")["green"])
 pdf("../Figs/rqtl2_scan17.pdf", height=7, width=10, pointsize=16)
 par(mar=c(3.6, 3.1, 0.6, 0.6),las=1,fg="white",col="white",col.axis="white",col.lab="lightblue",
     bg=bgcolor,bty="n")
-plot(out_lmm, pmap[17], col="orchid", ylim=yli, xlab="Chr 17 position (Mbp)",
+plot(out_lmm, pmap[17], col=lodcolors[2], ylim=yli, xlab="Chr 17 position (Mbp)",
      mgp=c(1.6,0.3,0))
-plot(out_loco, pmap[17], col="orange2", add=TRUE)
-plot(out, pmap, chr=17, add=TRUE)
-legend("topright", c("HK", "LMM", "LMM loco"), col=c("slateblue", "orchid", "orange2"),
+plot(out_loco, pmap[17], col=lodcolors[3], add=TRUE)
+plot(out, pmap, chr=17, add=TRUE, col=lodcolors[1])
+legend("topright", c("HK", "LMM", "LMM loco"), col=lodcolors,
        lwd=2, bg="gray90", text.col="black", box.col="black")
 dev.off()
 

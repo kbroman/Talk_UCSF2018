@@ -28,6 +28,7 @@ if(file.exists(file)) {
     eff <- scan1coef(apr[,17], wts[,12,drop=FALSE], k[17], addcovar=sex)
     blup <- scan1blup(apr[,17], wts[,12,drop=FALSE], k[17], addcovar=sex)
 
+
     cl <- class(eff)
     eff[,1:8] <- eff[,1:8] - rowMeans(eff[,1:8])
     blup[,1:8] <- blup[,1:8] - rowMeans(blup[,1:8])
@@ -109,7 +110,6 @@ par(mar=c(0.1, 3.1, 0.6, 0.6))
 xli <- c(31.35, 35.12)
 plot(out_snps, snpinfo, xaxt="n", mgp=c(1.6,0.3,0), xlim=xli, drop=1.5)
 par(mar=c(3.1, 3.1, 0.1, 0.6))
-plot_genes(genes, xlim=xli, mgp=c(1.6,0.3,0),
+plot_genes(genes, xlim=xli, mgp=c(1.6,0.3,0), xlab="Chr 17 position (Mbp)",
            colors=broman::brocolors("web")[c(2,4,5,6,9,10,11,12,13,14,15)])
-title(xlab="Chr 17 position (Mbp)", line=1.6)
 dev.off()

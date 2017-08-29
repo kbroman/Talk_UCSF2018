@@ -1,6 +1,6 @@
 ### Talk on &ldquo;R/qtl2: high-dimensional data and multi-parent populations
 
-These are slides for a talk that I will give at the
+These are slides for a talk that I gave at the
 [CTC meeting](http://complextrait.org/ctc2017/) in Memphis, TN, on 14
 June 2017.
 

@@ -1,6 +1,6 @@
 ### Talk on &ldquo;R/qtl2: high-dimensional data and multi-parent populations
 
-These are slides for a talk that I will give at UNC-Charlottee
+These are slides for a talk that I gave at UNC-Charlottee
 on 22 Sep 2017.
 
 PDF of slides at <https://bit.ly/uncc2017>.

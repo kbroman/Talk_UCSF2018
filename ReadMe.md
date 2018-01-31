@@ -4,7 +4,7 @@
 These are slides for a talk that I gave at UC-San Francisco
 on 1 Feb 2018
 
-PDF of slides at <https://bit.ly/uchi2017>.
+PDF of slides at <https://bit.ly/UCSF2018>.
 
 ---
 
